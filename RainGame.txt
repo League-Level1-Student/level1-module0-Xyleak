@@ -1,0 +1,38 @@
+int randomNumber = (int) random(1000);
+int rainy;
+int score;
+void setup(){
+size(1000,1000);
+}
+
+void draw(){  
+rainy+=100;
+
+
+background(181,229,255);  
+fill(36,136,214);
+stroke(128,195,247);
+ellipse(randomNumber,rainy,20,20);
+
+if(rainy==1000){
+
+rainy=0;
+rainy=randomNumber;
+}
+  
+fill(129,132,135);
+rect(mouseX,900,100,50);  
+
+fill(0,0,0);
+textSize(16);
+text("Score:"+score,20,20);
+}
+
+void checkCatch(int x){
+  if( x > mouseX && x < mouseX+100)
+  score++;
+  else if(score > 0)
+  score--;
+  println ("Your Score is" + score);
+}
+

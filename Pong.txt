@@ -1,0 +1,39 @@
+import ddf.minim.*;
+Minim minim;
+AudioSample sound;
+
+PImage backgroundImage;
+
+int ballx;
+int bally;
+int speedx = 5;
+int speedy = 1;
+
+void setup(){
+size(500,500);
+backgroundImage = loadImage("image.jpg");
+
+minim = new Minim (this);
+sound = minim.loadSample("Pong.wav", 16);
+
+} 
+
+void draw (){
+fill(250,250,250);  
+rect(mouseX,250, 50,100);  
+  
+  
+ballx+=speedx;
+bally+=speedy;
+background(24, 27, 30);
+fill(221, 252, 219);  
+stroke(12, 255, 0);
+ellipse(ballx,bally,20,20);
+
+if(ballx > 500){ speedx = -5;}  
+if(ballx < 0){ speedx = 5;}  
+if(bally > 500){ speedy = -1;}
+if(bally < 0){ speedy = 1;}  
+  
+if(bally > 500){ sound.trigger();} 
+}
