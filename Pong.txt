@@ -9,9 +9,9 @@ int bally;
 int paddlex;
 int paddley;
 int paddleLength;
-int speedx = 5;
-int speedy = 1;
-
+int speedx = 50;
+int speedy = 5;
+boolean paddalel;
 boolean intersects(int ballx, int bally, int paddlex, int paddley, int paddleLength){
 if(bally > paddley && ballx > paddlex && ballx < paddlex +paddleLength)
 return true;
@@ -45,16 +45,15 @@ fill(0, 0, 0);
 stroke(12, 255, 0);
 ellipse(ballx,bally,20,20);
 
-if( intersects( ) ){ return true;}
-if(ballx > 1000){ speedx = -5;}  
-if(ballx < 0){ speedx = 5;}  
-if(bally > 1000){ speedy = -1;}
-if(bally < 0){ speedy = 1;}  
+paddalel = intersects(ballx,bally,paddlex,paddley,paddleLength);
+if(paddalel == true){speedx = -100;}
+if(ballx > 1000){ speedx = -100;}  
+if(ballx < 0){ speedx = 100;}  
+if(bally > 1000){ speedy = -100;}
+if(bally < 0){ speedy = 100;}  
   
 if(bally > 1000){ sound.trigger();} 
 if(bally < 0){sound.trigger();}
 if(ballx > 1000){ sound.trigger();}
 if(ballx < 0){ sound.trigger();}
 }
-
-

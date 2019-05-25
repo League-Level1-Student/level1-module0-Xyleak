@@ -1,0 +1,40 @@
+int z;
+int i;
+float r = random(500);
+float r1 = random(500);
+void setup(){
+  
+size(500,500);
+background(0,0,0);
+  
+}
+
+void draw(){
+
+
+r1 = (int) random (500);
+r = (int) random(500); 
+
+for(z=0; z<301; z++){    
+fill(250,0,0);
+ellipse(r,r1,10,10);
+} 
+
+}  
+
+
+float frequency = .001;
+float noiseInterval = PI;
+
+void makeMagical() {
+  fill(0,0,0,10);
+  rect(0,0,width,height);
+  noStroke();
+}
+float getWormX(int i){
+  return map(noise(i*noiseInterval + frameCount * frequency),0,0,0, width);
+}
+float getWormY(int i){
+  return map(noise(i*noiseInterval+1 +frameCount * frequency),0,1,0,height);
+}
+
