@@ -42,6 +42,20 @@ static void drawPointy() {
     z.turn(-90);
 		
 }
+
+static void drawhous() {
+	z.setPenColor(244,66,209);
+	z.move(l);		
+	z.turn(90);		
+	z.move(25);		
+	z.turn(90);
+	z.move(l);
+	z.turn(-90);
+	z.setPenColor(55,147,36);
+	z.move(10);	
+	z.turn(-90);
+		
+}
 	
 	public static void main(String[] args) {
 		
@@ -53,9 +67,10 @@ z.penDown();
 z.setSpeed(999999999);
 
 
-for (int i = 0; i < 99; i++) {
+for (int i = 0; i < 999999999; i++) {
 drawhouse();
 drawPointy();
+drawhous();
 
 	}
 }
