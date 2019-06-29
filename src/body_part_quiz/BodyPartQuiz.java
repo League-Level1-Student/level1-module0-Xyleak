@@ -42,36 +42,104 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(250, 250);
 
 		showNextImage();
 
 	}
-
+	int score;
 	private void startQuiz() {
-int score;
-initializeGui();
+		
+		initializeGui();
 		// 1. Make an int variable to hold the score.
 
-		// 2. Set the size of the window in the initializeGui() method 
+		// 2. Set the size of the window in the initializeGui() method
 
 		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
+		String guess = JOptionPane.showInputDialog("Who is dis?");
+		if (guess.equals("arnold0")) {
+			JOptionPane.showMessageDialog(null, "It's actually arnold1, but good enough...");
+			score = (+1);
+			JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
 
-		// 5. Check their answer. If they guessed correctly:
-		// -- Tell them they are right and increase the score by 1
+		else {
+			JOptionPane.showMessageDialog(null, "YOUR MIND: ...Idk, I always thought he was " + guess
+					+ " {(It was actually arnold0, arnold1 if you're a true fan)}");
+		
+		score = (-1);
+		JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
+showNextImage();
 
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
+		
+		
+		
+//-----------------------------------------------
+	
+	String guess2 = JOptionPane.showInputDialog("Who is dis?");
+	
+		if (guess2.equals("leon")) {
+			JOptionPane.showMessageDialog(null, "It's actually leone, but good enough...");
+			score = (+2);
+			JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
 
-		// 7. Use the showNextImage() method below to get the next image
+		else {
+			JOptionPane.showMessageDialog(null, "YOUR MIND: ...Idk, I always thought he was " + guess2
+					+ " {(It was actually leon, leone if you're a true fan)}");
+		
+		score = (-2);
+		JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
+	showNextImage();
+		
+	//----------------------------------------------------------
+	
+	
+	String guess3 = JOptionPane.showInputDialog("Who is dis?");{
+	
+		if (guess3.equals("morgana")) {
+			JOptionPane.showMessageDialog(null, "Looking Good Joker");
+			score = (+3);
+			JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
+
+		else {
+			JOptionPane.showMessageDialog(null, "YOUR MIND: ...Idk, I always thought he was " + guess3
+					+ " {(It was actually morgana, only true fans understand)}");
+		
+		score = (-3);
+		JOptionPane.showMessageDialog(null, "Score: "+score);
+		}
 		showNextImage();
-
-		// 8. .... repeat 4-7 for all your images.....
-
-		// 9. Show them their current score
-
+		
 	}
+		}
+	
+	
+		//----------------------------------------------------------------------------
+
+	
+
+
+	
+	
+
+
+
+	
+	// 5. Check their answer. If they guessed correctly:
+	// -- Tell them they are right and increase the score by 1
+
+	// 6. Otherwise:
+	// -- Tell them they are wrong and who the person is
+
+	// 7. Use the showNextImage() method below to get the next image
+
+	// 8. .... repeat 4-7 for all your images.....
+
+	// 9. Show them their current score
 
 	public void showNextImage() {
 		panel.removeAll();
